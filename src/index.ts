@@ -41,7 +41,7 @@ async function parseQuery(queryTag, omniOK){
   // console.log("DB", queryTag,omniOK)
   let searchTag  = (queryTag) ? `[?b :block/path-refs [:block/name "${queryTag.toLowerCase().trim().replace(/^["'](.+(?=["']$))["']$/, '$1')}"]]
 ` : ""
-  const omniSearch = (omniOK) ? "" : `[?p :block/journal? true] [?p :block/journal-day ${journalYesterday()}]`
+  const omniSearch = (omniOK) ? "" : `[?p :block/journal? true]`
   if (queryTag === "imsure" && omniOK) searchTag = ""
 
   // https://stackoverflow.com/questions/19156148/i-want-to-remove-double-quotes-from-a-string
